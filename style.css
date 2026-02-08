@@ -1,76 +1,156 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2ee94d;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    color: #333;
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.kotak {
-    text-align: center;
-    height: 400px;
-    width: 400px;
-    background-color: rgb(255, 255, 255);
+.main-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 800px;
+    max-width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Bagian Form */
+.kotak-form {
+    flex: 1;
+    padding: 40px;
+    background-color: white;
 }
 
 h2 {
-    text-align: center;
-    color: #0d76e7;
+    color: #4a5568;
+    margin-bottom: 30px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-form {
-    text-align: center;
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
 }
 
 input[type="text"],
-input[type="number"],
-input[type="submit"] {
+input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
     box-sizing: border-box;
+    transition: all 0.3s;
 }
 
-input[type="submit"] {
-    background-color: #0d76e7;
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    width: 100px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.hasil {
-    height: 400px;
-    width: 400px;
-    background-color: #0d76e7;
-    text-align: center;
-    border-radius: 20px;
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+/* Bagian Hasil */
+.kotak-hasil {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    font-size: 30px;
 }
 
-.hasil h3 {
-    border: 2px solid white;
-    border-radius: 20px;
-    background-color: white;
-    color: black;
+.hasil-placeholder {
+    text-align: center;
+    opacity: 0.7;
+}
+
+.hasil-content {
+    text-align: center;
+    width: 100%;
+}
+
+.hasil-content h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nama-output {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.nilai-output {
+    font-size: 72px;
+    font-weight: 700;
+    margin: 10px 0;
 }
 
 .emoticon {
-    font-size: 30px;
-    color: rgb(218, 230, 6);
-    margin-top: 20px;
+    margin: 20px 0;
+}
+
+.keterangan-output {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Warna Keterangan */
+.text-success { color: #48bb78; }
+.text-danger { color: #f56565; }
+.text-warning { color: #ed8936; }
+
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+    }
 }
